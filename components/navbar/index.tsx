@@ -3,15 +3,14 @@ import clsx from "clsx";
 import CenterNavItems from "./center-nav-items";
 import LeftNavItems from "./left-nav-items";
 import RightNavItems from "./right-nav-items";
-import RandomizedAudioWaveAnimation from "./randomized-audio-wave-animation";
+import RandomizedAudioWaveAnimation from "../atoms/randomized-audio-wave-animation";
 
 const Navbar = () => {
-
   return (
-    <div className="space-y-[8px]">
+    <div className="p-[16px] space-y-[8px]">
       <div
         className={clsx(
-          "container__padding__y flex justify-between items-center lg:grid lg:grid-cols-[135px_auto_135px] xl:grid-cols-[200px_auto_200px] 3xl:grid-cols-[250px_auto_250px]"
+          "flex justify-between items-center lg:grid lg:grid-cols-[135px_auto_135px] xl:grid-cols-[200px_auto_200px] 3xl:grid-cols-[250px_auto_250px]"
         )}
       >
         {/* left side */}
@@ -28,19 +27,16 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center">
-          <div>
-            <h1>asf</h1>
-            <RandomizedAudioWaveAnimation />
-          </div>
-          <p className="uppercase text-white tracking_2 base__font__size opacity_hover_animation">
-            list with us
-          </p>
+      <div className="flex justify-between items-center pt-[8px]">
+        <div>
+          <RandomizedAudioWaveAnimation />
         </div>
-    
+        <p className="uppercase text-white tracking-[2px] text-[6.67px] lg:text-[6.5px] xl:text-[9.23px] 3xl:text-[12px] opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer">
+          list with us
+        </p>
+      </div>
     </div>
   );
 };
 
 export default Navbar;
-
