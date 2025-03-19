@@ -1,9 +1,9 @@
-// components/Hero.js
 "use client";
-import React, { useState } from "react"; // Add useState to the import
+import React, { useState } from "react";
 import BottomSection from "./BottomSection";
 import Navbar from "../navbar";
 import Footer from "../footer/footer";
+import MiceScroll from "../atoms/mice-scroll";
 
 export default function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -22,25 +22,20 @@ export default function Hero() {
 
   return (
     <div className="relative h-[100vh] text-white">
-      {" "}
-      {/* Background Image */}{" "}
+      {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out"
         style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
       ></div>
-      
-      {/* Overlay Image */}
-      <div className="absolute inset-0 flex justify-center items-center">
-        <img
-          src="/assets/Group 3121.png"
-          alt="Overlay Image"
-          className="h-full w-full"
-        />
-      </div>
+
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
+
       {/* Header Component */}
       <div className="relative">
         <Navbar />
       </div>
+
       {/* Slide Indicators */}
       <div className="w-full">
         <div className="absolute z-10 bottom-48 md:bottom-16 desktop:bottom-20 max-md:left-1/2 transform -translate-x-1/2 md:translate-x-0 md:right-8 desktop:right-20 flex space-x-4">
@@ -55,12 +50,19 @@ export default function Hero() {
           ))}
         </div>
       </div>
+
       <div className="z-10 w-full">
         <BottomSection />
       </div>
+
+      <div className="absolute bottom-[125px] lg:bottom-[11dvh] 3xl:bottom-[12.3dvh] right-0 container__padding z-10">
+        <MiceScroll />
+      </div>
+
       <div className="absolute bottom-0">
         <Footer />
       </div>
     </div>
   );
 }
+

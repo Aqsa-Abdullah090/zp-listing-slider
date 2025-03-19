@@ -3,6 +3,7 @@ import clsx from "clsx";
 import CenterNavItems from "./center-nav-items";
 import LeftNavItems from "./left-nav-items";
 import RightNavItems from "./right-nav-items";
+import RandomizedAudioWaveAnimation from "./randomized-audio-wave-animation";
 
 const Navbar = () => {
 
@@ -26,6 +27,16 @@ const Navbar = () => {
           <RightNavItems variant="absolute" />
         </div>
       </div>
+
+      <div className="flex justify-between items-center">
+          <div>
+            <h1>asf</h1>
+            <RandomizedAudioWaveAnimation />
+          </div>
+          <p className="uppercase text-white tracking_2 base__font__size opacity_hover_animation">
+            list with us
+          </p>
+        </div>
     
     </div>
   );
