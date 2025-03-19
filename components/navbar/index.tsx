@@ -27,7 +27,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center pt-[8px]">
+      <div className="flex justify-between items-center pt-[16px]">
         <div>
           <RandomizedAudioWaveAnimation />
         </div>
