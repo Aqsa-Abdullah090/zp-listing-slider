@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { links } from "./contants";
-import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import clsx from "clsx";
 
 const CenterNavItems = () => {
-  const searchParams = useSearchParams();
+
  
 
   return (
@@ -16,9 +15,8 @@ const CenterNavItems = () => {
             key={link}
             className={clsx(
               "uppercase text-[6.67px] lg:text-[6.5px] xl:text-[9.23px] 2xl:text-[12px] tracking-[3px] whitespace-nowrap opacity-50",
-              searchParams.get("type")?.toString() === link.replaceAll(" ", "-")
-                ? "opacity-100 cursor-pointer"
-                : "opacity_hover_animation"
+            
+            
             )}
           >
             {link}

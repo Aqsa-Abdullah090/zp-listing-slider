@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useState } from "react";
-import "./style.scss";
+// import "./style.scss";
 
 const RandomizedAudioWaveAnimation = () => {
   const [isMuted, setIsMuted] = useState(true); // ✅ Removed <boolean>
