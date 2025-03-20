@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import MiceSvg from "../svgs/mice-svg";
-// import "./style.scss";
+import "./style.scss";
 
 const MiceScroll = ({ targetId }: { targetId: string }) => {
   return (
