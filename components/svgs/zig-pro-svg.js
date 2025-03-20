@@ -5,7 +5,7 @@ const ZigPro = () => {
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 174.06 56.69"
-      className="w-[68.23px] lg:w-[94.47px] 3xl:w-[122.81px] h-auto z-10 fill-current"
+      className="w-[68.23px] lg:w-[94.47px] 2xl:w-[122.81px] h-auto z-10 fill-current"
     
     >
       <path

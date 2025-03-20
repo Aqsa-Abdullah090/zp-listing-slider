@@ -7,10 +7,10 @@ import RandomizedAudioWaveAnimation from "../atoms/randomized-audio-wave-animati
 
 const Navbar = () => {
   return (
-    <div className="p-[16px] space-y-[8px]">
+    <div className="p-[16px] 2xl:p-[40px] space-y-[8px]">
       <div
         className={clsx(
-          "flex justify-between items-center lg:grid lg:grid-cols-[135px_auto_135px] xl:grid-cols-[200px_auto_200px] 3xl:grid-cols-[250px_auto_250px]"
+          "flex justify-between items-center lg:grid lg:grid-cols-[135px_auto_135px] xl:grid-cols-[200px_auto_200px] 2xl:grid-cols-[250px_auto_250px]"
         )}
       >
         {/* left side */}
@@ -22,16 +22,16 @@ const Navbar = () => {
           <CenterNavItems />
         </div>
         {/* right side  */}
-        <div className="flex space-x-5 lg:space-x-8 3xl:space-x-14 items-center justify-self-end">
+        <div className="flex space-x-5 lg:space-x-8 2xl:space-x-14 items-center justify-self-end">
           <RightNavItems variant="absolute" />
         </div>
       </div>
 
-      <div className="flex justify-between items-center pt-[16px]">
+      <div className="flex justify-between items-center pt-[16px] 2xl:pt-[40px]">
         <div>
           <RandomizedAudioWaveAnimation />
         </div>
-        <p className="uppercase text-white tracking-[2px] text-[6.67px] lg:text-[6.5px] xl:text-[9.23px] 3xl:text-[12px] opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer">
+        <p className="uppercase text-white tracking-[2px] text-[6.67px] lg:text-[6.5px] xl:text-[9.23px] 2xl:text-[15px] opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer">
           list with us
         </p>
       </div>

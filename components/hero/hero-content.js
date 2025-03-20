@@ -15,24 +15,24 @@ const HeroContent = ({ agent }) => {
       <img
         src={agent?.agent_logo}
         alt={agent?.name}
-        className="h-[20px] lg:h-[27.78px] 3xl:h-[38.46px]"
+        className="h-[20px] lg:h-[27.78px] 2xl:h-[38.46px]"
       />
-      <p className="text-white text-[10.00px] lg:text-[15px] 3xl:text-[18px] tracking-[2px] uppercase whitespace-nowrap">
+      <p className="text-white text-[10.00px] lg:text-[15px] 2xl:text-[20px] tracking-[2px] 2xl:tracking-[3.5px] uppercase whitespace-nowrap">
         <span dir="ltr">$</span>
         {agent.amount} {agent.currency}
       </p>
-      <div className="overflow-hidden sm:overflow-visible uppercase flex space-x-[16.67px] lg:space-x-[23.08px] 3xl:space-x-[32px] whitespace-nowrap text-[6.67px] lg:text-[6.5px] xl:text-[9.23px] 3xl:text-[12px] text-white tracking-[2px]">
+      <div className="overflow-hidden sm:overflow-visible uppercase flex space-x-[16.67px] lg:space-x-[23.08px] 2xl:space-x-[38px] whitespace-nowrap text-[6.67px] lg:text-[6.5px] xl:text-[9.23px] 2xl:text-[20px] text-white tracking-[2px] 2xl:tracking-[3px]">
         <p>{agent.address_line_1}</p>
         {agent.address_line_2 && <p>{agent.address_line_2}</p>}
         <p>{agent.city}</p>
         <p>{agent.postal_code}</p>
         <p>{agent.country_name}</p>
       </div>
-      <button className="h-[20px] lg:h-[27.69px] 3xl:h-[36px] px-4 3xl:px-6  flex justify-between space-x-4 text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 border-2 border-white items-center text-[7.78px] lg:text-[10.77px] 3xl:text-[14px] tracking-[1.5px] whitespace-nowrap cursor-pointer">
+      <button className="h-[20px] lg:h-[27.69px] 2xl:h-[52px] px-4 2xl:px-6  flex justify-between space-x-4 2xl:space-x-10 text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 border-2 border-white items-center text-[7.78px] lg:text-[10.77px] 2xl:text-[20px] tracking-[1.5px] 2xl:tracking-[3px] whitespace-nowrap cursor-pointer">
         <p>
-          <span dir="ltr">
+        
           $ 
-          </span>
+       
           25.00
         </p>
         <p className="tracking-[2px]">BUY ENTRY NOW</p>

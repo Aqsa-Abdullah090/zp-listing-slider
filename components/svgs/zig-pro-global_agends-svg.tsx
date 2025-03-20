@@ -1,10 +1,11 @@
-const ZigProGlobalAgends = () => {
+const ZigProGlobalAgends = (props: any) => {
   return (
     <svg
       id="Layer_1"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 174.06 83.5"
+      {...props}
     >
       <g>
         <path

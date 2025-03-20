@@ -33,7 +33,7 @@ const RightNavItems = ({ variant, expanded = false }) => {
         <img
           src="/assets/temp/uk-flag.png"
           alt="uk flag"
-          className="w-[22.22px] lg:w-[30.77px] 2xl:w-[40px] h-auto flex-shrink-0"
+          className="w-[22.22px] lg:w-[30.77px] 2xl:w-[42px] h-auto flex-shrink-0"
         />
      
     </>

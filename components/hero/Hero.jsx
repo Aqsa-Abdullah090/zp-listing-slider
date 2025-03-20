@@ -156,11 +156,11 @@ export default function Hero() {
 
       {/* Slide Indicators */}
       <div className="w-full">
-  <div className="absolute z-10 top-24 right-[16px] flex flex-col space-y-4">
+  <div className="absolute z-10 top-24 2xl:top-56 right-[16px] 2xl:right-[32px] flex flex-col space-y-4 2xl:space-y-6">
     {images.map((_, index) => (
       <div
         key={index}
-        className="relative cursor-pointer w-[2px] h-[30px] desktop:h-[4rem] bg-[#808080] overflow-hidden"
+        className="relative cursor-pointer w-[2px] h-[30px] 2xl:w-[4px] 2xl:h-[76px] bg-[#808080] overflow-hidden"
         onClick={() => handleIndicatorClick(index)}
       >
         {currentImageIndex === index && (
@@ -176,13 +176,13 @@ export default function Hero() {
 
 
       {/* Mice Scroll Indicator */}
-      <div className="absolute bottom-[125px] lg:bottom-[11dvh] 3xl:bottom-[12.3dvh] right-0 px-[16px] py-[8px] z-10">
+      <div className="absolute bottom-[125px] lg:bottom-[11dvh] 3xl:bottom-[12.3dvh] right-0 px-[16px] 2xl:px-[32px] py-[8px] z-10">
         <MiceScroll />
       </div>
 
       {/* Hero Content (Changes when background changes) */}
       <div className="absolute bottom-0 space-y-[1.5dvh] 3xl:space-y-[2dvh] mt-auto">
-        <div className="relative w-full lg:w-fit px-[16px]">
+        <div className="relative w-full lg:w-fit px-[16px] 2xl:px-[32px]">
           <AnimatePresence mode="wait">
             <HeroContent key={agent.id} agent={agent} />
           </AnimatePresence>

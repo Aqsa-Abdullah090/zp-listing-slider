@@ -14,7 +14,7 @@ const CenterNavItems = () => {
           <li
             key={link}
             className={clsx(
-              "uppercase text-[6.67px] lg:text-[6.5px] xl:text-[9.23px] 2xl:text-[12px] tracking-[3px] whitespace-nowrap opacity-50",
+              "uppercase text-[6.67px] lg:text-[6.5px] xl:text-[9.23px] 2xl:text-[15px] tracking-[3px] whitespace-nowrap opacity-50",
             
             
             )}
