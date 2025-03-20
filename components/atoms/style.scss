@@ -1,11 +1,9 @@
-
 .scroll__animation {
-
   $colorBg: #ffffff00;
   $colorOutline: #00000000;
   $colorOutlineFade: #cccccc00;
 
-  // $widthMouse: 30px;
+  $widthMouse: 30px; // Added missing variable
   $heightMouse: 50px;
   $borderMouse: 4px;
 
@@ -41,12 +39,13 @@
   .mouse {
     @include bgGradient;
     position: relative;
-    // width: $widthMouse;
+    width: $widthMouse;
     height: $heightMouse;
     border-radius: 100px;
     background-size: 100% 200%;
     animation: colorSlide $animDuration linear infinite,
       nudgeMouse $animDuration ease-out infinite;
+    
     &:before,
     &:after {
       content: "";
@@ -57,14 +56,16 @@
       left: 0;
       margin: auto;
     }
+
     &:before {
-      // width: $widthMouse - $borderMouse;
-      height: $heightMouse - $borderMouse;
+      width: calc(#{$widthMouse} - #{$borderMouse});
+      height: calc(#{$heightMouse} - #{$borderMouse});
       background-color: $colorBg;
       border-radius: 100px;
     }
+
     &:after {
-      background-color: #fff; // $colorOutline
+      background-color: #fff;
       width: $sizeTrackball;
       height: $sizeTrackball;
       border-radius: 100%;
@@ -165,96 +166,13 @@
       opacity: 1;
       transform: scale(1) translateY(-$posTrackball);
     }
-    66% {
-      opacity: 1;
-      transform: scale(0.9) translateY($posTrackball/4);
-    }
-    74% {
-      opacity: 0;
-      transform: scale($shrinkTrackball) translateY($posTrackball * 2);
-    }
-    75%,
-    79% {
-      opacity: 0;
-      transform: scale($shrinkTrackball) translateY(-$posTrackball);
-    }
     88%,
     100% {
       opacity: 1;
       transform: scale(1) translateY(-$posTrackball);
     }
   }
-
-  @keyframes nudgeMouse {
-    0% {
-      transform: translateY(0);
-    }
-    20% {
-      transform: translateY($posMouse);
-    }
-    30% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY($posMouse);
-    }
-    60% {
-      transform: translateY(0);
-    }
-    80% {
-      transform: translateY($posMouse);
-    }
-    90% {
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes nudgeText {
-    0% {
-      transform: translateY(0);
-    }
-    20% {
-      transform: translateY($posText);
-    }
-    30% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY($posText);
-    }
-    60% {
-      transform: translateY(0);
-    }
-    80% {
-      transform: translateY($posText);
-    }
-    90% {
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes colorText {
-    21% {
-      color: $colorOutlineFade;
-    }
-    30% {
-      color: $colorOutline;
-    }
-    51% {
-      color: $colorOutlineFade;
-    }
-    60% {
-      color: $colorOutline;
-    }
-    81% {
-      color: $colorOutlineFade;
-    }
-    90% {
-      color: $colorOutline;
-    }
-  }
 }
-
 
 // AUDIO WAVE ANIMATION
 .agent-marquee-container {
@@ -270,7 +188,7 @@
 }
 
 .audio__wave__animation__wrapper {
-  @apply cursor-pointer;
+  cursor: pointer;
 
   .bars {
     display: flex;
@@ -279,13 +197,13 @@
     list-style: none;
     width: max-content;
     gap: 2px;
-    // @apply gap-0.5 3xl:gap-1;
+
     li {
-      // @apply w-[3px] 3xl:w-[5px];
       width: 4px;
       height: 15px;
       border-radius: 25px;
       animation: equaliser 1.5s linear infinite;
+
       &:nth-child(1) {
         background: #fff;
         animation-delay: 1s;
@@ -312,6 +230,7 @@
       }
     }
   }
+
   @keyframes equaliser {
     50% {
       height: 25px;
