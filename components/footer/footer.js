@@ -4,7 +4,7 @@ import FooterMarquee from "./footer-marquee";
 
 const Footer = () => {
   return (
-    <footer className="flex min-h-[10dvh] bg-black items-center space-x-5 container__padding">
+    <footer className="flex min-h-[10dvh] bg-black items-center space-x-5 p-[16px]">
       {/* left  */}
       <div>
         <ZigProGlobalAgends
