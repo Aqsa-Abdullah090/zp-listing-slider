@@ -2,11 +2,7 @@
 
 import { motion } from "framer-motion";
 
-interface Props {
-  agent: any;
-}
-
-const HeroContent = ({ agent }: Props) => {
+const HeroContent = ({ agent }) => {
   return (
     <motion.div
       key={agent?.id}
