@@ -181,7 +181,7 @@ export default function Hero() {
       </div>
 
       {/* Hero Content (Changes when background changes) */}
-      <div className="absolute bottom-1 space-y-[1.5dvh] 3xl:space-y-[2dvh] mt-auto">
+      <div className="absolute bottom-0 space-y-[1.5dvh] 3xl:space-y-[2dvh] mt-auto">
         <div className="relative w-full lg:w-fit px-[16px] 2xl:px-[32px]">
           <AnimatePresence mode="wait">
             <HeroContent key={agent.id} agent={agent} />
