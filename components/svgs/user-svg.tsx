@@ -1,12 +1,13 @@
 import React from "react";
 
-const UserSvg = () => {
+const UserSvg = (props: any) => {
   return (
     <svg
       id="Layer_1"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 76.29 86.88"
+      {...props}
     >
       <path
       fill="white"

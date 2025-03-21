@@ -15,7 +15,7 @@ const RightNavItems = ({
 
   return (
     <>
-      {/* <div
+      <div
         className={clsx(
           variant === "fixed" && "duration-300 ease-linear",
           variant === "fixed" && !expanded 
@@ -26,11 +26,11 @@ const RightNavItems = ({
         )}
       >
         <ZigProSell className="fill-inherit" />
-      </div> */}
+      </div>
       {/* Apply theme-based fill color */}
       <UserSvg
         className={clsx(
-          "w-auto h-[16.67px] lg:h-[40.08px] 2xl:h-[30px] flex-shrink-0 z-10",
+          "w-auto h-[16.67px] lg:h-[23.08px] 2xl:h-[30px] flex-shrink-0 z-10",
           theme === "light" ? "fill-black" : "fill-white" // Change fill color based on theme
         )}
       />
@@ -38,7 +38,7 @@ const RightNavItems = ({
         <img
           src="/assets/temp/uk-flag.png"
           alt="uk flag"
-          className="w-[22.22px] lg:w-[42.77px] 2xl:w-[60px] h-auto flex-shrink-0"
+          className="w-[22.22px] lg:w-[30.77px] 2xl:w-[40px] h-auto flex-shrink-0"
         />
       </div>
     </>
