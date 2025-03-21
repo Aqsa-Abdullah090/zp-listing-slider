@@ -161,7 +161,7 @@ export default function Hero() {
           {images.map((_, index) => (
             <div
               key={index}
-              className="relative cursor-pointer w-[2px] h-[30px] 2xl:w-[4px] 2xl:h-[76px] bg-[#808080] overflow-hidden"
+              className="relative cursor-pointer w-[2px] h-[30px] 2xl:w-[4px] 2xl:h-[60px] bg-[#808080] overflow-hidden"
               onClick={() => handleIndicatorClick(index)}
             >
               {currentImageIndex === index && (
