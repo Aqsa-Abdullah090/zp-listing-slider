@@ -28,7 +28,7 @@ const Navbar = () => {
       </div>
 
       <div className="flex justify-between items-center pt-[16px] 2xl:pt-[40px]">
-        <div>
+        <div className="hidden sm:block" >
           <RandomizedAudioWaveAnimation />
         </div>
         <p className="uppercase text-white tracking-[2px] text-[6.67px] lg:text-[6.5px] xl:text-[9.23px] 2xl:text-[15px] opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer">

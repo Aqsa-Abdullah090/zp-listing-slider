@@ -140,7 +140,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative h-[100vh] text-white">
+    <div className="relative h-full w-full text-white">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out"
@@ -176,12 +176,12 @@ export default function Hero() {
       </div>
 
       {/* Mice Scroll Indicator */}
-      <div className="absolute bottom-[125px] lg:bottom-[11dvh] 3xl:bottom-[12.3dvh] right-0 px-[16px] 2xl:px-[32px] py-[8px] z-10">
+      <div className="absolute bottom-[110px] lg:bottom-[11dvh] 3xl:bottom-[12.3dvh] right-0 px-[16px] 2xl:px-[32px] py-[8px] z-10">
         <MiceScroll />
       </div>
 
       {/* Hero Content (Changes when background changes) */}
-      <div className="absolute bottom-0 space-y-[1.5dvh] 3xl:space-y-[2dvh] mt-auto">
+      <div className="absolute bottom-1 space-y-[1.5dvh] 3xl:space-y-[2dvh] mt-auto">
         <div className="relative w-full lg:w-fit px-[16px] 2xl:px-[32px]">
           <AnimatePresence mode="wait">
             <HeroContent key={agent.id} agent={agent} />
