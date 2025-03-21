@@ -5,6 +5,7 @@ import Navbar from "../navbar";
 import Footer from "../footer/footer";
 import MiceScroll from "../atoms/mice-scroll";
 import HeroContent from "./hero-content";
+import AbsoluteSidebarBtn from "../atoms/absolute-sidebar-btn";
 
 export default function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -164,6 +165,8 @@ export default function Hero() {
       <div className="relative">
         <Navbar />
       </div>
+
+      <AbsoluteSidebarBtn />
 
       {/* Slide Indicators */}
       <div className="w-full">
