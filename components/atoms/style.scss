@@ -279,11 +279,11 @@
     height: 15px;
     list-style: none;
     width: max-content;
-    gap: 8px;
+    gap: 5px;
     // @apply gap-0.5 3xl:gap-1;
     li {
       // @apply w-[3px] 3xl:w-[5px];
-      width: 4px;
+      width: 5px;
       height: 60px;
       border-radius: 25px;
       animation: equaliser 1.5s linear infinite;
