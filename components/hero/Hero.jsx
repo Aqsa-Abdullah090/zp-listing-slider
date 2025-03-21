@@ -176,7 +176,7 @@ export default function Hero() {
             >
               {currentImageIndex === index && (
                 <div
-                  className="absolute bottom-0 left-0 w-full bg-white"
+                  className="absolute top-0 left-0 w-full bg-white"
                   style={{ height: `${progress}%` }}
                 ></div>
               )}
