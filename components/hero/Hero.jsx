@@ -143,7 +143,7 @@ export default function Hero() {
     <div className="relative h-full w-full text-white">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out"
+        className="absolute inset-0 bg-cover bg-center transition-all duration-100 fade"
         style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
       ></div>
 
