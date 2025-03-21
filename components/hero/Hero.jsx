@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
@@ -67,7 +66,8 @@ export default function Hero() {
     },
     {
       id: 5,
-      agent_logo: "https://zimopro.com/assets/temp/agents_logos/Christies_IRE.svg",
+      agent_logo:
+        "https://zimopro.com/assets/temp/agents_logos/Christies_IRE.svg",
       name: "Agent Five",
       amount: "5,600,000 GBP",
       address_line_1: "12 Elm St",
@@ -77,7 +77,8 @@ export default function Hero() {
     },
     {
       id: 6,
-      agent_logo: "https://zimopro.com/assets/temp/agents_logos/John_Taylor.svg",
+      agent_logo:
+        "https://zimopro.com/assets/temp/agents_logos/John_Taylor.svg",
       name: "Agent Six",
       amount: "6,800,000 GBP",
       address_line_1: "45 Pine St",
@@ -156,24 +157,23 @@ export default function Hero() {
 
       {/* Slide Indicators */}
       <div className="w-full">
-  <div className="absolute z-10 top-24 2xl:top-56 right-[16px] 2xl:right-[32px] flex flex-col space-y-4 2xl:space-y-6">
-    {images.map((_, index) => (
-      <div
-        key={index}
-        className="relative cursor-pointer w-[2px] h-[30px] 2xl:w-[4px] 2xl:h-[76px] bg-[#808080] overflow-hidden"
-        onClick={() => handleIndicatorClick(index)}
-      >
-        {currentImageIndex === index && (
-          <div
-            className="absolute bottom-0 left-0 w-full transition-all duration-500 ease-linear  bg-white"
-            style={{ height: `${progress}%` }}
-          ></div>
-        )}
+        <div className="absolute z-10 top-24 2xl:top-56 right-[16px] 2xl:right-[32px] flex flex-col space-y-4 2xl:space-y-6">
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className="relative cursor-pointer w-[2px] h-[30px] 2xl:w-[4px] 2xl:h-[76px] bg-[#808080] overflow-hidden"
+              onClick={() => handleIndicatorClick(index)}
+            >
+              {currentImageIndex === index && (
+                <div
+                  className="absolute bottom-0 left-0 w-full transition-all duration-500 ease-linear  bg-white"
+                  style={{ height: `${progress}%` }}
+                ></div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
-
 
       {/* Mice Scroll Indicator */}
       <div className="absolute bottom-[125px] lg:bottom-[11dvh] 3xl:bottom-[12.3dvh] right-0 px-[16px] 2xl:px-[32px] py-[8px] z-10">
@@ -189,7 +189,7 @@ export default function Hero() {
         </div>
 
         {/* Footer */}
-        <div className="relative">
+        <div className="relative w-full lg:w-fit">
           <Footer />
         </div>
       </div>
