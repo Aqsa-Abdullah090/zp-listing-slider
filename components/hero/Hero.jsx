@@ -9,6 +9,7 @@ import HeroContent from "./hero-content";
 export default function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [preloadedImages, setPreloadedImages] = useState([]);
 
   // Background images
   const images = [
@@ -21,6 +22,17 @@ export default function Hero() {
     "/assets/454353.jpg",
     "/assets/534521.jpg",
   ];
+
+  // Preload images once when the component mounts
+  useEffect(() => {
+    const preload = images.map((src) => {
+      const img = new Image();
+      img.src = src;
+      return img;
+    });
+
+    setPreloadedImages(preload);
+  }, []);
 
   // Agent details corresponding to each background image
   const agents = [
@@ -99,30 +111,28 @@ export default function Hero() {
     {
       id: 8,
       agent_logo: "https://zimopro.com/assets/temp/agents_logos/Savills.svg",
-      name: "Agent Seven",
-      amount: "7,200,000 GBP",
-      address_line_1: "78 Maple St",
-      city: "Seattle",
-      postal_code: "98101",
+      name: "Agent Eight",
+      amount: "7,800,000 GBP",
+      address_line_1: "90 Oak St",
+      city: "Boston",
+      postal_code: "02101",
       country_name: "USA",
     },
   ];
 
-  const agent = agents[currentImageIndex % agents.length]; // Ensure a valid index
+  const agent = agents[currentImageIndex % agents.length];
 
   // Handle auto-slide transition
   useEffect(() => {
     let interval;
     let progressInterval;
 
-    // Reset progress when slide changes
     setProgress(0);
 
     progressInterval = setInterval(() => {
       setProgress((prev) => (prev >= 100 ? 100 : prev + 5.56)); // Complete in 18s
     }, 1000);
 
-    // Change slide after 18s
     interval = setTimeout(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
       setProgress(0);
@@ -136,14 +146,14 @@ export default function Hero() {
 
   const handleIndicatorClick = (index) => {
     setCurrentImageIndex(index);
-    setProgress(0); // Reset progress when manually changing
+    setProgress(0);
   };
 
   return (
     <div className="relative h-full w-full text-white">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center transition-all duration-100 fade"
+        className="absolute inset-0 bg-cover bg-center transition-all duration-10 ease-in"
         style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
       ></div>
 
@@ -166,7 +176,7 @@ export default function Hero() {
             >
               {currentImageIndex === index && (
                 <div
-                  className="absolute bottom-0 left-0 w-full transition-all duration-500 ease-linear  bg-white"
+                  className="absolute bottom-0 left-0 w-full bg-white"
                   style={{ height: `${progress}%` }}
                 ></div>
               )}
@@ -180,7 +190,7 @@ export default function Hero() {
         <MiceScroll />
       </div>
 
-      {/* Hero Content (Changes when background changes) */}
+      {/* Hero Content */}
       <div className="absolute bottom-0 space-y-[1.5dvh] 3xl:space-y-[2dvh] mt-auto">
         <div className="relative w-full lg:w-fit px-[16px] 2xl:px-[32px]">
           <AnimatePresence mode="wait">
@@ -196,3 +206,4 @@ export default function Hero() {
     </div>
   );
 }
+
