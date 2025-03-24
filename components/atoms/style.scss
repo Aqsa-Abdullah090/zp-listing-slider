@@ -283,7 +283,7 @@
   
     li {
       width: 3px;
-      height: 35px;
+      height: 15px;
       border-radius: 25px;
       animation: equaliser 1.5s linear infinite;
   
@@ -320,11 +320,10 @@
     }
   
     @media (min-width: 1920px) {
-      gap: 3px;
+      gap: 4px;
   
       li {
-        width: 6px;
-      height: 55px;
+        width: 5px;
 
       }
     }

@@ -125,28 +125,31 @@ export default function Hero() {
 
   // Handle auto-slide transition
   useEffect(() => {
-    let interval;
-    let progressInterval;
-
-    setProgress(0);
-
-    progressInterval = setInterval(() => {
-      setProgress((prev) => (prev >= 100 ? 100 : prev + 5.56)); // Complete in 18s
-    }, 1000);
-
-    interval = setTimeout(() => {
-      setCurrentImageIndex((prevIndex) => {
-        const newIndex = (prevIndex + 1) % images.length;
-        setProgress(0);
-        return newIndex;
-      });
-    }, 18000);
-
-    return () => {
-      clearInterval(progressInterval);
-      clearTimeout(interval);
+    let startTime;
+    const duration = 18000; // 18 seconds
+  
+    const updateProgress = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const newProgress = Math.min((elapsed / duration) * 160, 160);
+      setProgress(newProgress);
+  
+      if (elapsed < duration) {
+        requestAnimationFrame(updateProgress);
+      } else {
+        setCurrentImageIndex((prevIndex) => {
+          const newIndex = (prevIndex + 1) % images.length;
+          setProgress(0);
+          return newIndex;
+        });
+      }
     };
+  
+    const animationFrame = requestAnimationFrame(updateProgress);
+  
+    return () => cancelAnimationFrame(animationFrame);
   }, [currentImageIndex]);
+  
 
   const handleIndicatorClick = (index) => {
     setCurrentImageIndex(index);
