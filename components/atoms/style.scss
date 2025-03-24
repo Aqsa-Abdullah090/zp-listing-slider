@@ -276,15 +276,15 @@
   .bars {
     display: flex;
     align-items: flex-end;
-    height: 15px;
+    height: 20px;
     list-style: none;
     width: max-content;
-    gap: 5px;
+    gap: 2px;
     // @apply gap-0.5 3xl:gap-1;
     li {
       // @apply w-[3px] 3xl:w-[5px];
-      width: 5px;
-      height: 60px;
+      width: 3px;
+      height: 35px;
       border-radius: 25px;
       animation: equaliser 1.5s linear infinite;
       &:nth-child(1) {
