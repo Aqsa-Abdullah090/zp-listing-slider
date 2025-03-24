@@ -12,6 +12,17 @@ export default function Hero() {
   const [progress, setProgress] = useState(0);
   const [preloadedImages, setPreloadedImages] = useState([]);
 
+    // Preload images once when the component mounts
+    useEffect(() => {
+      const preload = images.map((src) => {
+        const img = new Image();
+        img.src = src;
+        return img;
+      });
+  
+      setPreloadedImages(preload);
+    }, []);
+
   // Background images
   const images = [
     "/assets/2313.jpg",
@@ -24,16 +35,6 @@ export default function Hero() {
     "/assets/534521.jpg",
   ];
 
-  // Preload images once when the component mounts
-  useEffect(() => {
-    const preload = images.map((src) => {
-      const img = new Image();
-      img.src = src;
-      return img;
-    });
-
-    setPreloadedImages(preload);
-  }, []);
 
   // Agent details corresponding to each background image
   const agents = [
