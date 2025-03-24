@@ -135,8 +135,11 @@ export default function Hero() {
     }, 1000);
 
     interval = setTimeout(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-      setProgress(0);
+      setCurrentImageIndex((prevIndex) => {
+        const newIndex = (prevIndex + 1) % images.length;
+        setProgress(0);
+        return newIndex;
+      });
     }, 18000);
 
     return () => {
@@ -197,7 +200,10 @@ export default function Hero() {
       <div className="absolute bottom-0 space-y-[1.5dvh] 3xl:space-y-[2dvh] mt-auto">
         <div className="relative w-full lg:w-fit px-[16px] 2xl:px-[32px]">
           <AnimatePresence mode="wait">
-            <HeroContent key={agent.id} agent={agent} />
+            <HeroContent
+              key={currentImageIndex}
+              agent={agents[currentImageIndex]}
+            />
           </AnimatePresence>
         </div>
 
@@ -209,4 +215,3 @@ export default function Hero() {
     </div>
   );
 }
-

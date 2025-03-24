@@ -39,3 +39,102 @@ const HeroContent = ({ agent }) => {
 };
 
 export default HeroContent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const agents = [
+//   {
+//     id: 1,
+//     agent_logo: "https://zimopro.com/assets/temp/agents_logos/Barnes_IR.svg",
+//     name: "Agent One",
+//     amount: "1,000,000 GBP",
+//     address_line_1: "123 Street",
+//     city: "New York",
+//     postal_code: "10001",
+//     country_name: "USA",
+//   },
+//   {
+//     id: 2,
+//     agent_logo: "https://zimopro.com/assets/temp/agents_logos/E&V.svg",
+//     name: "Agent Two",
+//     amount: "2,500,000 GBP",
+//     address_line_1: "456 Avenue",
+//     city: "Los Angeles",
+//     postal_code: "90001",
+//     country_name: "USA",
+//   },
+//   {
+//     id: 3,
+//     agent_logo: "https://zimopro.com/assets/temp/agents_logos/F&C.svg",
+//     name: "Agent Three",
+//     amount: "3,750,000 GBP",
+//     address_line_1: "789 Blvd",
+//     city: "Chicago",
+//     postal_code: "60601",
+//     country_name: "USA",
+//   },
+//   {
+//     id: 4,
+//     agent_logo: "https://zimopro.com/assets/temp/agents_logos/CB.svg",
+//     name: "Agent Four",
+//     amount: "4,200,000 GBP",
+//     address_line_1: "101 Main St",
+//     city: "Houston",
+//     postal_code: "77001",
+//     country_name: "USA",
+//   },
+//   {
+//     id: 5,
+//     agent_logo:
+//       "https://zimopro.com/assets/temp/agents_logos/Christies_IRE.svg",
+//     name: "Agent Five",
+//     amount: "5,600,000 GBP",
+//     address_line_1: "12 Elm St",
+//     city: "Miami",
+//     postal_code: "33101",
+//     country_name: "USA",
+//   },
+//   {
+//     id: 6,
+//     agent_logo:
+//       "https://zimopro.com/assets/temp/agents_logos/John_Taylor.svg",
+//     name: "Agent Six",
+//     amount: "6,800,000 GBP",
+//     address_line_1: "45 Pine St",
+//     city: "San Francisco",
+//     postal_code: "94101",
+//     country_name: "USA",
+//   },
+//   {
+//     id: 7,
+//     agent_logo: "https://zimopro.com/assets/temp/agents_logos/Sotherbys.svg",
+//     name: "Agent Seven",
+//     amount: "7,200,000 GBP",
+//     address_line_1: "78 Maple St",
+//     city: "Seattle",
+//     postal_code: "98101",
+//     country_name: "USA",
+//   },
+//   {
+//     id: 8,
+//     agent_logo: "https://zimopro.com/assets/temp/agents_logos/Savills.svg",
+//     name: "Agent Eight",
+//     amount: "7,800,000 GBP",
+//     address_line_1: "90 Oak St",
+//     city: "Boston",
+//     postal_code: "02101",
+//     country_name: "USA",
+//   },
+// ];
