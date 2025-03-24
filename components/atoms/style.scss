@@ -280,13 +280,13 @@
     list-style: none;
     width: max-content;
     gap: 2px;
-    // @apply gap-0.5 3xl:gap-1;
+  
     li {
-      // @apply w-[3px] 3xl:w-[5px];
       width: 3px;
       height: 35px;
       border-radius: 25px;
       animation: equaliser 1.5s linear infinite;
+  
       &:nth-child(1) {
         background: #fff;
         animation-delay: 1s;
@@ -312,10 +312,22 @@
         animation-delay: 1.1s;
       }
     }
-  }
-  @keyframes equaliser {
-    50% {
-      height: 25px;
+  
+    @keyframes equaliser {
+      50% {
+        height: 25px;
+      }
+    }
+  
+    @media (min-width: 1920px) {
+      gap: 3px;
+  
+      li {
+        width: 6px;
+      height: 55px;
+
+      }
     }
   }
+  
 }
