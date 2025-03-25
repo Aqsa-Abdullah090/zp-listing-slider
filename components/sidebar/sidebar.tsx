@@ -16,7 +16,8 @@ const Sidebar = ({ open }: { open: boolean }) => {
             : "absolute h-[90dvh] z-20"
         )}
       >
-        <OpenedSideMenuContent />
+        <OpenedSideMenuContent linksVisible={true} />
+
 
         {/* Vertical marquee */}
         <div className="w-[44.17%] pr-2 lg:pr-4 2xl:pr-6">

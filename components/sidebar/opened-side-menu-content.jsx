@@ -1,17 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
-import { RootState } from "@/store";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import UserSvg from "../svgs/user-svg";
 import ZigProSell from "../svgs/zig-pro-sell-svg";
 import ZigPro from "../svgs/zig-pro-svg";
 
-const OpenedSideMenuContent = () => {
+const OpenedSideMenuContent = ({ linksVisible }) => {
+
   const [isHovered, setIsHovered] = useState(false);
   const [qrcode, setQrcode] = useState("");
-  const { linksVisible } = (state: RootState) => state.sideMenu;
 
-  const handleSocialHoverStart = (qr_code: string) => {
+
+
+  const handleSocialHoverStart = (qr_code) => {
     setIsHovered(true);
     setQrcode(qr_code);
   };
@@ -20,6 +21,9 @@ const OpenedSideMenuContent = () => {
     setIsHovered(false);
     setQrcode("");
   };
+
+  console.log("linksVisible:", linksVisible);
+
 
   const images = Array.from({ length: 24 }, (_, index) => index);
 
