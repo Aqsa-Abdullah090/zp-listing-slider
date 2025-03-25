@@ -170,13 +170,13 @@ export default function Hero() {
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
 
+      <Sidebar open={sidebarOpen} />
+      <AbsoluteSidebarBtn toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+
       {/* Header Component */}
       <div className="relative">
         <Navbar />
       </div>
-
-      <Sidebar open={sidebarOpen} />
-      <AbsoluteSidebarBtn toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
 
       {/* Slide Indicators */}
       <div className="w-full">
