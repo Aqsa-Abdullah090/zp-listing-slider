@@ -5,12 +5,14 @@ import Navbar from "../navbar";
 import Footer from "../footer/footer";
 import MiceScroll from "../atoms/mice-scroll";
 import HeroContent from "./hero-content";
+import Sidebar from "../sidebar/sidebar";
 import AbsoluteSidebarBtn from "../sidebar/absolute-sidebar-btn";
 
 export default function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const [preloadedImages, setPreloadedImages] = useState([]);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
     // Preload images once when the component mounts
     useEffect(() => {
@@ -173,7 +175,8 @@ export default function Hero() {
         <Navbar />
       </div>
 
-      <AbsoluteSidebarBtn />
+      <Sidebar open={sidebarOpen} />
+      <AbsoluteSidebarBtn toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
 
       {/* Slide Indicators */}
       <div className="w-full">

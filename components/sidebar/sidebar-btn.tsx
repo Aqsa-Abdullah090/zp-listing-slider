@@ -5,7 +5,7 @@ import SideMenuTransSvg from "../svgs/side-menu-trans-svg";
 
 type Variant = "fixed" | "absolute";
 
-const SidebarBtn = ({ variant, page }: { variant: Variant; page: string }) => {
+const SidebarBtn = ({toggleSidebar, variant, page }: { toggleSidebar: string, variant: Variant; page: string }) => {
   const [text, setText] = useState<boolean>(false);
   const [animate, setAnimate] = useState<boolean>(false);
 
@@ -32,6 +32,7 @@ const SidebarBtn = ({ variant, page }: { variant: Variant; page: string }) => {
 
   return (
     <button
+    onClick={toggleSidebar}
       className={clsx(
         "duration-150 transition-all w-fit border-l-0 border-[2px]",
         "group",
