@@ -29,11 +29,13 @@ const OpenedSideMenuContent = () => {
         <ZigPro />
         {/* top left side links and countries  */}
         <div className="flex space-x-[105px] 4xl:justify-between 4xl: mr-10">
-
           {/* links  */}
           <div className="uppercase text-white text-[10px] tracking-[3px] space-y-[11.56px] lg:space-y-[1.9dvh] 3xl:space-y-[20.8px]  whitespace-nowrap">
             {proListing.map((item) => (
-              <p key={item.id} className="opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer w-fit">
+              <p
+                key={item.id}
+                className="opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer w-fit"
+              >
                 {item.name}
               </p>
             ))}
@@ -77,9 +79,7 @@ const OpenedSideMenuContent = () => {
                     key={link.id}
                     className="flex w-fit items-center lg:space-x-[18.46px] 3xl:space-x-[24px] opacity_hover_animation"
                   >
-              
                     <div className="w-[15.56px] lg:w-[21.54px] flex justify-center">
-                  
                       {link.iconType === "svg" ? (
                         <img
                           src={link.icon}
@@ -91,7 +91,6 @@ const OpenedSideMenuContent = () => {
                       )}
                     </div>
 
-                  
                     <motion.div>
                       {link.separator ? (
                         <div className="text-white uppercase sidemenu_font_size tracking_2 flex items-center space-x-[13px]">
@@ -165,13 +164,6 @@ const OpenedSideMenuContent = () => {
 export default OpenedSideMenuContent;
 
 // Data Arrays
-
-interface SocialIcons {
-  id: number;
-  name: string;
-  icon: string;
-  qr_code: string;
-}
 
 const proListing = [
   { id: 1, name: "premium" },
