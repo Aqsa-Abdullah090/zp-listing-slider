@@ -5,36 +5,35 @@ import { useState } from "react";
 import UserSvg from "../svgs/user-svg";
 import ZigProSell from "../svgs/zig-pro-sell-svg";
 import ZigPro from "../svgs/zig-pro-svg";
-// import SideMenuSearch from "./side-menu-search";
 
 const OpenedSideMenuContent = () => {
-  // const [isHovered, setIsHovered] = useState(false);
-  // const [qrcode, setQrcode] = useState("");
-  // const { linksVisible } = (state: RootState) => state.sideMenu;
+  const [isHovered, setIsHovered] = useState(false);
+  const [qrcode, setQrcode] = useState("");
+  const { linksVisible } = (state: RootState) => state.sideMenu;
 
-  // const handleSocialHoverStart = (qr_code: string) => {
-  //   setIsHovered(true);
-  //   setQrcode(qr_code);
-  // };
+  const handleSocialHoverStart = (qr_code: string) => {
+    setIsHovered(true);
+    setQrcode(qr_code);
+  };
 
-  // const handleSocialHoverEnd = () => {
-  //   setIsHovered(false);
-  //   setQrcode("");
-  // };
+  const handleSocialHoverEnd = () => {
+    setIsHovered(false);
+    setQrcode("");
+  };
 
-  // const images = Array.from({ length: 24 }, (_, index) => index);
+  const images = Array.from({ length: 24 }, (_, index) => index);
 
   return (
-    <div className="flex-grow container__padding container__padding__sidemenu__y  3xl:space-y-8 flex flex-col justify-between">
+    <div className="flex-grow px-2 lg:px-4 2xl:px-6 3xl:px-10 pt-2 lg:pt-4 2xl:pt-6  3xl:pt-10 pb-1 2xl:pb-3  3xl:space-y-8 flex flex-col justify-between">
       <div className="space-y-[24.44px] lg:space-y-[3.8dvh] 3xl:space-y-[4dvh] text-white">
         <ZigPro />
         {/* top left side links and countries  */}
         <div className="flex space-x-[105px] 4xl:justify-between 4xl: mr-10">
 
           {/* links  */}
-          <div className="uppercase text-white sidemenu_font_size tracking_2 sidemenu_line_spacing  whitespace-nowrap">
+          <div className="uppercase text-white text-[10px] tracking-[3px] space-y-[11.56px] lg:space-y-[1.9dvh] 3xl:space-y-[20.8px]  whitespace-nowrap">
             {proListing.map((item) => (
-              <p key={item.id} className="opacity_hover_animation w-fit">
+              <p key={item.id} className="opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer w-fit">
                 {item.name}
               </p>
             ))}
@@ -58,13 +57,10 @@ const OpenedSideMenuContent = () => {
           </div>
         </div>
 
-        
-        {/* center search bar */}
-        {/* <SideMenuSearch /> */}
         {/* bottom left side links with icons and qr code  */}
         <div className="flex justify-between items-end">
           {/* links and icons  */}
-          {/* <AnimatePresence initial={false}>
+          <AnimatePresence initial={false}>
             {linksVisible && (
               <motion.div
                 initial={{ clipPath: "inset(100% 0 0 0)" }}
@@ -113,9 +109,9 @@ const OpenedSideMenuContent = () => {
                 ))}
               </motion.div>
             )}
-          </AnimatePresence> */}
+          </AnimatePresence>
           {/* qr code  */}
-          {/* {linksVisible && (
+          {linksVisible && (
             <AnimatePresence>
               {isHovered && (
                 <motion.div
@@ -132,7 +128,7 @@ const OpenedSideMenuContent = () => {
                 </motion.div>
               )}
             </AnimatePresence>
-          )} */}
+          )}
         </div>
       </div>
       {/* footer  */}
@@ -145,7 +141,7 @@ const OpenedSideMenuContent = () => {
         </div>
         {/* social icons  */}
         <div className="flex space-x-2 3xl:space-x-3">
-          {/* {socialIcons.map((social) => (
+          {socialIcons.map((social) => (
             <div
               onMouseEnter={() =>
                 social.qr_code ? handleSocialHoverStart(social.qr_code) : null
@@ -159,7 +155,7 @@ const OpenedSideMenuContent = () => {
                 className="h-[13.64px] w-auto opacity_hover_animation"
               />
             </div>
-          ))} */}
+          ))}
         </div>
       </footer>
     </div>
@@ -170,20 +166,6 @@ export default OpenedSideMenuContent;
 
 // Data Arrays
 
-interface ProListing {
-  id: number;
-  name: string;
-}
-
-interface UserLinks {
-  id: number;
-  name: string;
-  altName?: string;
-  icon: any;
-  iconType: string;
-  separator: boolean;
-}
-
 interface SocialIcons {
   id: number;
   name: string;
@@ -191,7 +173,7 @@ interface SocialIcons {
   qr_code: string;
 }
 
-const proListing: ProListing[] = [
+const proListing = [
   { id: 1, name: "premium" },
   { id: 2, name: "featured" },
   { id: 3, name: "trending" },
@@ -201,7 +183,7 @@ const proListing: ProListing[] = [
   { id: 7, name: "ending soon" },
 ];
 
-const userLinks: UserLinks[] = [
+const userLinks = [
   {
     id: 1,
     name: "user id",
@@ -269,7 +251,7 @@ const userLinks: UserLinks[] = [
   },
 ];
 
-const socialIcons: SocialIcons[] = [
+const socialIcons = [
   {
     id: 1,
     name: "telegram",

@@ -28,24 +28,24 @@ const VerticalMarquee = ({ isSideMenuOpen }) => { // ✅ Accept `isSideMenuOpen`
   return (
     <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       <Marquee
-        direction="up"
+        direction="down"
         pauseOnHover={true}
         speed={50}
         gradient={false}
         style={{ height: isSideMenuOpen ? "100vh" : "90vh" }} // ✅ Use prop instead of Redux state
       >
         {tempThumbnailImages.map((listing) => (
-          <div key={listing.id} className={clsx(" mb-5", isHovered && "opacity_hover_animation")}>
+          <div key={listing.id} className={clsx("relative mb-5", isHovered && "opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer")}>
             <Link href={`/beta/listing-detail-page/?listing-id=${listing.id}`}>
               <img
                 src={listing.thumbnail} 
                 alt=""
-                className="w-[20vw] object-cover"
+                className="w-[50vw] object-cover"
               />
             </Link>
             <img
               src="/assets/ZigPro.svg"
-              className="h-[19px] 2xl:h-[25px] absolute top-3 left-3 3xl:top-5 3xl:left-5 z-[2] opacity-50"
+              className="h-[19px] 3xl:h-[25px] absolute top-3 left-3 3xl:top-5 3xl:left-5 z-[2] opacity-50"
               alt=""
             />
             {/* flag */}
