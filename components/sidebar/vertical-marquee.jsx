@@ -167,7 +167,7 @@ function VerticalMarquee() {
     <div className="relative h-[100vh] w-full overflow-hidden">
       <motion.div
         className="flex flex-col space-y-4"
-        animate={{ y: ["0%", "-100%"] }} // Moves up infinitely
+        animate={{ y: ["-100%", "0%"] }} // Moves up infinitely
         transition={{
           ease: "linear",
           duration: 10, // Speed of scrolling
@@ -181,7 +181,7 @@ function VerticalMarquee() {
             <img
               src={listing.thumbnail}
               alt={`Listing Image ${index + 1}`}
-              className="w-full h-full object-cover shadow-md rounded-lg"
+              className="w-full h-full object-cover shadow-md"
             />
 
             {/* Watermark Image */}
