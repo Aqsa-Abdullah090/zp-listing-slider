@@ -4,6 +4,7 @@ import { useState } from "react";
 import UserSvg from "../svgs/user-svg";
 import ZigProSell from "../svgs/zig-pro-sell-svg";
 import ZigPro from "../svgs/zig-pro-svg";
+import SideMenuSearch from "./side-menu-search";
 
 const OpenedSideMenuContent = ({ linksVisible }) => {
 
@@ -47,21 +48,24 @@ const OpenedSideMenuContent = ({ linksVisible }) => {
 
           {/* Top Countries  */}
           <div className="relative w-fit">
-            <p className="absolute -right-1 -top-[25px] 3xl:-top-[30px] uppercase text-white sidemenu_font_size tracking_2">
+            <p className="absolute -right-1 -top-[25px] 3xl:-top-[30px] uppercase text-white text-[10px] tracking-[3px]">
               Top Countries
             </p>
             <div className="grid grid-cols-4 w-[140px] 3xl:w-[190px] h-full place-content-start justify-items-end gap-4">
-              {/* {topCountriesQuery.data?.map((country: any) => (
+              {topCountries.map((country) => (
                 <img
                   key={country.id}
                   className="w-[13.89px] lg:w-[19.23px] 3xl:w-[25px] h-auto cursor-pointer"
                   src={country.app_icon}
                   alt={country.name}
                 />
-              ))} */}
+              ))}
             </div>
           </div>
         </div>
+
+        {/* center search bar */}
+        <SideMenuSearch />
 
         {/* bottom left side links with icons and qr code  */}
         <div className="flex justify-between items-end">
@@ -137,10 +141,10 @@ const OpenedSideMenuContent = ({ linksVisible }) => {
       {/* footer  */}
       <footer className="flex justify-between items-center">
         {/* terms and privacy  */}
-        <div className="text-white uppercase flex sidemenu_font_size tracking_2 space-x-[18.6px] items-center">
-          <p className="opacity_hover_animation">terms</p>
-          <div className="separator__width h-[7.89px] 3xl:h-[10.26px] 4xl:h-[12px] bg-white opacity-50" />
-          <p className="opacity_hover_animation">privacy</p>
+        <div className="text-white uppercase flex text-[10px] tracking-[3px] space-x-[18.6px] items-center">
+          <p className="opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer">terms</p>
+          <div className="border-r-[2.3px] h-[7.89px] 3xl:h-[10.26px] 4xl:h-[12px] bg-white opacity-50" />
+          <p className="opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer">privacy</p>
         </div>
         {/* social icons  */}
         <div className="flex space-x-2 3xl:space-x-3">
@@ -155,7 +159,7 @@ const OpenedSideMenuContent = ({ linksVisible }) => {
               <img
                 src={social.icon}
                 alt={social.name}
-                className="h-[13.64px] w-auto opacity_hover_animation"
+                className="h-[13.64px] w-auto opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer"
               />
             </div>
           ))}
@@ -168,6 +172,15 @@ const OpenedSideMenuContent = ({ linksVisible }) => {
 export default OpenedSideMenuContent;
 
 // Data Arrays
+
+const topCountries = [
+  { id: 1, app_icon: "https://firebasestorage.googleapis.com/v0/b/zimo-b9759.appspot.com/o/zimo%2Fcategories%2F1684477561138.png?alt=media&token=8fb84dae-d3d1-43f2-a37f-ecd19c358738", name: "premium" },
+  { id: 2, app_icon: "https://firebasestorage.googleapis.com/v0/b/zimo-b9759.appspot.com/o/zimo%2Fcategories%2F1701928434424.png?alt=media&token=33d30c6e-426e-4e21-b199-12b7ef775fb4", name: "featured" },
+  { id: 3, app_icon: "https://firebasestorage.googleapis.com/v0/b/zimo-b9759.appspot.com/o/zimo%2Fcategories%2F1684473689921.png?alt=media&token=dac0e97d-6811-4c2a-a8be-4c4c90a1a06f", name: "trending" },
+  { id: 4, app_icon: "https://firebasestorage.googleapis.com/v0/b/zimo-b9759.appspot.com/o/zimo%2Fcategories%2F1684478650261.png?alt=media&token=8af16680-b840-4d6e-9411-cf6298fb16e8", name: "popular" },
+  { id: 5, app_icon: "https://firebasestorage.googleapis.com/v0/b/zimo-b9759.appspot.com/o/zimo%2Fcategories%2F1684478721616.png?alt=media&token=c07e8260-19d6-4b31-8aa9-29e7df214eac", name: "just for you" },
+  { id: 6, app_icon: "/assets/temp/uk-flag.png", name: "newly listed" }
+];
 
 const proListing = [
   { id: 1, name: "premium" },

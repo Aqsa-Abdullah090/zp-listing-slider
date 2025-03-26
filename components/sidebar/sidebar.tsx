@@ -7,7 +7,7 @@ const Sidebar = ({ open }: { open: boolean }) => {
     <>
       <div
         className={clsx(
-          "backdrop-blur-xl bg-black/50 w-[50vw] flex justify-between transition-all duration-500 ",
+          "backdrop-blur-xl bg-black/50 w-[50vw] h-[80vh] flex justify-between transition-all duration-500 ",
           open
             ? "translate-x-0"
             : "-translate-x-[150vw] lg:-translate-x-[50vw]",
