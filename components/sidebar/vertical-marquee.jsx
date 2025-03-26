@@ -32,7 +32,7 @@ const VerticalMarquee = ({ isSideMenuOpen }) => { // ✅ Accept `isSideMenuOpen`
         pauseOnHover={true}
         speed={50}
         gradient={false}
-        style={{ height: isSideMenuOpen ? "100vh" : "90vh" }} // ✅ Use prop instead of Redux state
+        style={{ height: isSideMenuOpen ? "100vh" : "60vh" }} 
       >
         {tempThumbnailImages.map((listing) => (
           <div key={listing.id} className={clsx("relative mb-5", isHovered && "opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer")}>
@@ -40,7 +40,7 @@ const VerticalMarquee = ({ isSideMenuOpen }) => { // ✅ Accept `isSideMenuOpen`
               <img
                 src={listing.thumbnail} 
                 alt=""
-                className="w-[50vw] object-cover"
+                className="w-[400px] object-cover"
               />
             </Link>
             <img
@@ -65,6 +65,3 @@ const VerticalMarquee = ({ isSideMenuOpen }) => { // ✅ Accept `isSideMenuOpen`
 };
 
 export default VerticalMarquee;
-
-
-

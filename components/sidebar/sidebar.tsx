@@ -21,7 +21,7 @@ const Sidebar = ({ open }: { open: boolean }) => {
 
         {/* Vertical marquee */}
         <div className="w-[44.17%] pr-2 lg:pr-4 2xl:pr-6">
-          <p className="absolute sidemenu_font_size tracking_2 uppercase origin-left w-fit rotate-90 h-fit text-white whitespace-nowrap lg:-translate-x-[15px] 3xl:-translate-x-[27px] lg:translate-y-[10px] 3xl:translate-y-[20px]">
+          <p className="absolute text-[10px] tracking-[3px] uppercase origin-left w-fit rotate-90 h-fit text-white whitespace-nowrap lg:-translate-x-[15px] 3xl:-translate-x-[27px] lg:translate-y-[10px] 3xl:translate-y-[20px]">
             Just for you
           </p>
           <VerticalMarquee />

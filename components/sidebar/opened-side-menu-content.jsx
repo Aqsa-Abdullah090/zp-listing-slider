@@ -76,12 +76,12 @@ const OpenedSideMenuContent = ({ linksVisible }) => {
                 }}
                 exit={{ clipPath: "inset(100% 0 0 0)" }}
                 transition={{ duration: 0.5, ease: "linear" }}
-                className="sidemenu_line_spacing -translate-x-[10px] overflow-hidden"
+                className="space-y-[11.56px] lg:space-y-[1.9dvh] 3xl:space-y-[20.8px] -translate-x-[10px] overflow-hidden"
               >
                 {userLinks.map((link) => (
                   <motion.div
                     key={link.id}
-                    className="flex w-fit items-center lg:space-x-[18.46px] 3xl:space-x-[24px] opacity_hover_animation"
+                    className="flex w-fit items-center lg:space-x-[18.46px] 3xl:space-x-[24px] opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer"
                   >
                     <div className="w-[15.56px] lg:w-[21.54px] flex justify-center">
                       {link.iconType === "svg" ? (
@@ -97,13 +97,13 @@ const OpenedSideMenuContent = ({ linksVisible }) => {
 
                     <motion.div>
                       {link.separator ? (
-                        <div className="text-white uppercase sidemenu_font_size tracking_2 flex items-center space-x-[13px]">
+                        <div className="text-white uppercase text-[10px] tracking-[3px] flex items-center space-x-[13px]">
                           <p>{link.name}</p>
-                          <div className="separator__width h-[7.89px] 3xl:h-[10.26px] 4xl:h-[12px] bg-white" />
+                          <div className="border-r-[2.3px] h-[7.89px] 3xl:h-[10.26px] 4xl:h-[12px] bg-white" />
                           <p>{link.altName}</p>
                         </div>
                       ) : (
-                        <p className="text-white uppercase sidemenu_font_size tracking_2">
+                        <p className="text-white uppercase text-[10px] tracking-[3px]">
                           {link.name}
                         </p>
                       )}
