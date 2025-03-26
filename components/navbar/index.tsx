@@ -10,7 +10,7 @@ const Navbar = () => {
     <div className="p-[16px] 2xl:p-[40px] space-y-[8px]">
       <div
         className={clsx(
-          "flex justify-between items-center lg:grid lg:grid-cols-[135px_auto_135px] xl:grid-cols-[200px_auto_200px] 2xl:grid-cols-[250px_auto_250px]"
+          "flex justify-between items-center"
         )}
       >
         {/* left side */}

@@ -25,7 +25,10 @@ const RightNavItems = ({
             : "" 
         )}
       >
-        <ZigProSell className="fill-inherit" />
+       <div className="flex-none  block 2xl:hidden">
+  <ZigProSell className="fill-inherit" />
+</div>
+
       </div>
       {/* Apply theme-based fill color */}
       <UserSvg
