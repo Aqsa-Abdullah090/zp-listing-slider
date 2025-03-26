@@ -168,7 +168,7 @@ export default function Hero() {
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
 
-      <Sidebar open={sidebarOpen} />
+      <Sidebar open={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <AbsoluteSidebarBtn toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
 
       {/* Header Component */}
