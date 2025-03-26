@@ -43,14 +43,14 @@ const SidebarBtn = ({toggleSidebar, variant, page }: { toggleSidebar: string, va
     >
       <div
         className={clsx(
-          "w-[27.78px] lg:w-[38.46px] 3xl:w-[50px] transition-transform duration-1000 ease-in-out",
+          "w-[27.78px] lg:w-[38.46px] 2xl:w-[50px] transition-transform duration-1000 ease-in-out",
           animate ? "-translate-x-full" : "-translate-x-[1px]"
         )}
       >
         {text ? (
           <ZpSideMenuTransSvg
             className={clsx(
-              "w-[27.78px] lg:w-[38.46px] 3xl:w-[50px] h-auto",
+              "w-[27.78px] lg:w-[38.46px] 2xl:w-[50px] h-auto",
               homeFixed && "fill-black group-hover:fill-white",
               variant === "absolute" || reelsFixed
                 ? "fill-white group-hover:fill-black"
@@ -60,7 +60,7 @@ const SidebarBtn = ({toggleSidebar, variant, page }: { toggleSidebar: string, va
         ) : (
           <SideMenuTransSvg
             className={clsx(
-              "w-[27.78px] lg:w-[38.46px] 3xl:w-[50px] h-auto",
+              "w-[27.78px] lg:w-[38.46px] 2xl:w-[50px] h-auto",
               homeFixed && "fill-black group-hover:fill-white",
               variant === "absolute" || reelsFixed
                 ? "fill-white group-hover:fill-black"
