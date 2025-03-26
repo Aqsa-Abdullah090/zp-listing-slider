@@ -130,6 +130,7 @@ export default function Hero() {
   useEffect(() => {
     let startTime;
     const duration = 18000; // 18 seconds
+    let animationFrame;
   
     const updateProgress = (timestamp) => {
       if (!startTime) startTime = timestamp;
@@ -138,20 +139,18 @@ export default function Hero() {
       setProgress(newProgress);
   
       if (elapsed < duration) {
-        requestAnimationFrame(updateProgress);
+        animationFrame = requestAnimationFrame(updateProgress);
       } else {
-        setCurrentImageIndex((prevIndex) => {
-          const newIndex = (prevIndex + 1) % images.length;
-          setProgress(0);
-          return newIndex;
-        });
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        setProgress(0);
       }
     };
   
-    const animationFrame = requestAnimationFrame(updateProgress);
+    animationFrame = requestAnimationFrame(updateProgress);
   
-    return () => cancelAnimationFrame(animationFrame);
-  }, [currentImageIndex]);
+    return () => cancelAnimationFrame(animationFrame); // Cleanup on unmount
+  }, [currentImageIndex]); // Add dependency to prevent infinite re-renders
+  
   
 
   const handleIndicatorClick = (index) => {

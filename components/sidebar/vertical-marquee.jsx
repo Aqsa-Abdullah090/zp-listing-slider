@@ -76,20 +76,20 @@ const verticalCarouselSettings = {
   arrows: false,
   cssEase: "linear",
   rtl: true,
-  responsive: [
-    {
-      breakpoint: 2560,
-      settings: {
-        slidesToShow: 3,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 4,
-      },
-    },
-  ],
+  // responsive: [
+  //   {
+  //     breakpoint: 2560,
+  //     settings: {
+  //       slidesToShow: 3,
+  //     },
+  //   },
+  //   {
+  //     breakpoint: 768,
+  //     settings: {
+  //       slidesToShow: 4,
+  //     },
+  //   },
+  // ],
 };
 
 const VerticalMarquee = () => { 
