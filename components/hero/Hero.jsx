@@ -126,30 +126,29 @@ export default function Hero() {
 
   const agent = agents[currentImageIndex % agents.length];
 
-  // Handle auto-slide transition
   useEffect(() => {
-    let startTime;
+    let interval;
+    let progressValue = 0;
     const duration = 18000; // 18 seconds
-    let animationFrame;
+    const step = (160 / duration) * 100; // Incremental step to update progress smoothly
   
-    const updateProgress = (timestamp) => {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-      const newProgress = Math.min((elapsed / duration) * 160, 160);
-      setProgress(newProgress);
+    const updateProgress = () => {
+      progressValue += step;
+      setProgress(progressValue);
   
-      if (elapsed < duration) {
-        animationFrame = requestAnimationFrame(updateProgress);
-      } else {
+      if (progressValue >= 160) {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
         setProgress(0);
+      } else {
+        interval = setTimeout(updateProgress, 100);
       }
     };
   
-    animationFrame = requestAnimationFrame(updateProgress);
+    interval = setTimeout(updateProgress, 100);
   
-    return () => cancelAnimationFrame(animationFrame); // Cleanup on unmount
-  }, [currentImageIndex]); // Add dependency to prevent infinite re-renders
+    return () => clearTimeout(interval); // Cleanup on unmount
+  }, [currentImageIndex]); // ✅ Depend on only `currentImageIndex`
+  
   
   
 
