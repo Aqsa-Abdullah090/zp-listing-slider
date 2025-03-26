@@ -76,36 +76,42 @@ const verticalCarouselSettings = {
   arrows: false,
   cssEase: "linear",
   rtl: true,
-  // responsive: [
-  //   {
-  //     breakpoint: 2560,
-  //     settings: {
-  //       slidesToShow: 3,
-  //     },
-  //   },
-  //   {
-  //     breakpoint: 768,
-  //     settings: {
-  //       slidesToShow: 4,
-  //     },
-  //   },
-  // ],
+  responsive: [
+    {
+      breakpoint: 2560,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 4,
+      },
+    },
+  ],
 };
 
 const VerticalMarquee = () => { 
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} className="">
-
-       <Slider {...verticalCarouselSettings} className="h-[100vh]">
+    <div 
+      onMouseEnter={() => setIsHovered(true)} 
+      onMouseLeave={() => setIsHovered(false)} 
+      className="h-screen w-full flex justify-center items-center overflow-hidden"
+    >
+      <Slider {...verticalCarouselSettings} className="h-full w-full">
         {tempThumbnailImages.map((listing) => (
-          <div key={listing.id} className={clsx("relative mb-5 ", isHovered && "opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer")}>
+          <div 
+            key={listing.id} 
+            className={clsx("relative mb-5 h-full", isHovered && "opacity-50 hover:opacity-100 duration-300 transition-all cursor-pointer")}
+          >
             <Link href={`/beta/listing-detail-page/?listing-id=${listing.id}`}>
               <img
                 src={listing.thumbnail} 
-                alt=""
-                className="w-[400px] object-cover"
+                alt="Listing Image"
+                className="w-full h-full object-cover"
               />
             </Link>
             <img
@@ -114,17 +120,18 @@ const VerticalMarquee = () => {
               alt="zig pro"
             />
             {/* flag */}
-              <img
-                src="/assets/temp/uk-flag.png"
-                className="h-[19px] 3xl:h-[25px] absolute top-3 3xl:top-5 right-3 3xl:right-5 z-[2]"
-                alt=""
-              />
+            <img
+              src="/assets/temp/uk-flag.png"
+              className="h-[19px] 3xl:h-[25px] absolute top-3 3xl:top-5 right-3 3xl:right-5 z-[2]"
+              alt="UK Flag"
+            />
             <Heart />
           </div>
         ))}
-     </Slider>
+      </Slider>
     </div>
   );
 };
+
 
 export default VerticalMarquee;
