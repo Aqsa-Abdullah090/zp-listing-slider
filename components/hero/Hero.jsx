@@ -138,21 +138,23 @@ export default function Hero() {
     },
   ];
 
-  const agent = agents[currentImageIndex % agents.length];
+  // const agent = agents[currentImageIndex % agents.length];
 
   useEffect(() => {
     let interval;
     let progressValue = 0;
-    const duration = 16000; // 18 seconds
-    const step = (160 / duration) * 100; // Incremental step to update progress smoothly
+    const duration = 18000; // 17 seconds
+    const step = (120 / duration) * 100; 
   
     const updateProgress = () => {
       progressValue += step;
       setProgress(progressValue);
   
-      if (progressValue >= 160) {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      if (progressValue >= 120) {
         setProgress(0);
+        
+        // Simultaneously update both background and content
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
       } else {
         interval = setTimeout(updateProgress, 100);
       }
@@ -160,8 +162,9 @@ export default function Hero() {
   
     interval = setTimeout(updateProgress, 100);
   
-    return () => clearTimeout(interval); // Cleanup on unmount
-  }, [currentImageIndex]); // ✅ Depend on only `currentImageIndex`
+    return () => clearTimeout(interval);
+  }, [currentImageIndex]); 
+  
   
   
   
