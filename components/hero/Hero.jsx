@@ -143,7 +143,7 @@ export default function Hero() {
   useEffect(() => {
     let interval;
     let progressValue = 0;
-    const duration = 18500; // 18 seconds
+    const duration = 16000; // 18 seconds
     const step = (160 / duration) * 100; // Incremental step to update progress smoothly
   
     const updateProgress = () => {

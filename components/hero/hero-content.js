@@ -9,7 +9,7 @@ const HeroContent = ({ agent }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.2 }}
       className="space-y-[2.08dvh] 2xl:space-y-[2.96dvh] w-[347.22px] lg:w-[480.77px] 3xl:w-[625px] duration-10 transition-all"
     >
       <img
