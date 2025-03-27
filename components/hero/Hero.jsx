@@ -144,7 +144,7 @@ export default function Hero() {
     let interval;
     let progressValue = 0;
     const duration = 18000; // 17 seconds
-    const step = (120 / duration) * 100; 
+    const step = (100 / duration) * 100; 
   
     const updateProgress = () => {
       progressValue += step;
