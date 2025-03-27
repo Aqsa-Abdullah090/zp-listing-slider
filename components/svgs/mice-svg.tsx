@@ -5,7 +5,7 @@ const MiceSvg = () => {
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 43.18 78.92"
-      className="w-[19.58px] lg:w-[27.12px] 3xl:w-[35.25px] h-auto"
+      className="w-[19.58px] lg:w-[27.12px] 2xl:w-[35.25px] h-auto"
     >
       <path
         fill="white" // ✅ Set fill color to white
