@@ -15,15 +15,29 @@ export default function Hero() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
     // Preload images once when the component mounts
+    const [loadedCount, setLoadedCount] = useState(0);
+
     useEffect(() => {
       const preload = images.map((src) => {
         const img = new Image();
         img.src = src;
+    
+        img.onload = () => setLoadedCount((prev) => prev + 1);
+        img.onerror = () => console.error(`Failed to load: ${src}`);
+    
         return img;
       });
-  
+    
       setPreloadedImages(preload);
     }, []);
+    
+    useEffect(() => {
+      if (loadedCount === images.length) {
+        console.log("All images preloaded successfully!");
+      }
+    }, [loadedCount]);
+    
+    
 
   // Background images
   const images = [
@@ -129,7 +143,7 @@ export default function Hero() {
   useEffect(() => {
     let interval;
     let progressValue = 0;
-    const duration = 18000; // 18 seconds
+    const duration = 18500; // 18 seconds
     const step = (160 / duration) * 100; // Incremental step to update progress smoothly
   
     const updateProgress = () => {

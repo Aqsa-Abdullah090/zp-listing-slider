@@ -23,7 +23,6 @@ const OpenedSideMenuContent = ({ linksVisible }) => {
     setQrcode("");
   };
 
-  console.log("linksVisible:", linksVisible);
 
 
   const images = Array.from({ length: 24 }, (_, index) => index);
