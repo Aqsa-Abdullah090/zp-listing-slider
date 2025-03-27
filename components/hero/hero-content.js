@@ -28,7 +28,7 @@ const HeroContent = ({ agent }) => {
         <p>{agent.postal_code}</p>
         <p>{agent.country_name}</p>
       </div>
-      <button className="h-[20px] lg:h-[27.69px] 2xl:h-[36px] px-4  flex justify-between space-x-4 text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 border-2 border-white items-center text-[7.78px] lg:text-[10.77px] 2xl:text-[14px] tracking-[1.5px] 2xl:tracking-[3px] whitespace-nowrap cursor-pointer">
+      <button className="h-[20px] lg:h-[27.69px] 2xl:h-[36px] px-4 2xl:px-6  flex justify-between space-x-4 text-white bg-transparent hover:bg-white hover:text-black transition-all duration-300 border-2 border-white items-center text-[7.78px] lg:text-[10.77px] 2xl:text-[14px] tracking-[1.5px] 2xl:tracking-[3px] whitespace-nowrap cursor-pointer">
         <p>$25.00</p>
         <p className="tracking-[2px]">BUY ENTRY NOW</p>
       </button>
